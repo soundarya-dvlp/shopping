@@ -1,0 +1,30 @@
+{% extends 'master.html' %}
+{% load static%}
+
+{% block title %}
+ productpage
+ {% endblock %}
+
+ {% block content%}
+            <div class="container">
+                <div class="row">
+                    <h1 class="pro1"> PRODUCTS</h1><br><br>
+                    {% for x in products %}
+        
+                    <div class="col-lg-3 my-3">
+                        <div class="inbox">
+                            <img src="/media/{{x.pro_image}}" alt="" height="200px" width="100%" style="object-fit: cover;object-position: center;">
+                            <div class="span1">
+                                <span>{{x.pro_name}}</span>
+                            </div>
+                            <div class="span1">
+                                <span>  RS.{{x.pro_price}}</span>
+                            </div>
+                            <a href="/addtocart/{{x.id}}" class="btn btn-primary product-btn">add to cart</a>
+                        </div>
+                    </div>
+                    {% endfor%}
+                    {% include 'footer.html' %} 
+                </div>
+            </div>
+{% endblock %}

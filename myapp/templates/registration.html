@@ -1,0 +1,34 @@
+{% extends 'master.html' %}
+{% load static%}
+
+{% block title%}
+   registration page
+{% endblock %}
+
+{% block content%}
+<form action="/registration" method="post">
+    {% csrf_token %}
+    <div class="mb-3 mt-3">
+      <label for="email" class="form-label">name:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter name" name="registration_name">
+    </div>
+    <div class="mb-3">
+        <label for="pwd" class="form-label">email:</label>
+        <input type="email" class="form-control" id="Email" placeholder="Enter email" name="registration_email">
+    </div>
+    <div class="mb-3">
+        <label for="pwd" class="form-label">phone number:</label>
+        <input type="number" class="form-control" id="Name" placeholder="Enter phone number" name="registration_phonenumber">
+    </div>
+    <div class="mb-3">
+        <label for="pwd" class="form-label">username:</label>
+        <input type="text" class="form-control" id="username" placeholder="Enter username" name="registration_username">
+    </div>
+    <div class="mb-3">
+        <label for="pwd" class="form-label">Password:</label>
+        <input type="password" class="form-control" id="Password" placeholder="Enter password" name="registration_password">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock%}
