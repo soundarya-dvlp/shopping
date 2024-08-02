@@ -1,0 +1,42 @@
+{% extends 'master.html' %}
+{%load static%}
+
+{% block title %}
+    contact page 
+{% endblock %}
+
+{% block content %}
+    <section class="consec">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 mx-auto">
+                    <div class="conbox">
+                        <h1 class="demo5">contact page</h1>
+                        <!-- <img src="{% static 'images/pic5.jpg'%}" alt=""> -->
+                        <form action="/contact" method="post">
+                            {% csrf_token %}
+                            <div class="mb-3 mt-3">
+                            <label for="Name" class="form-label">Name:</label>
+                            <input type="text" class="form-control" id="Name" placeholder="Enter Name" name="contact_name">
+                            </div>
+
+                            <div class="mb-3 mt-3">
+                            <label for="email" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter email" name="contact_email">
+                            </div>
+
+                            <div class="mb-3 mt-3">
+                                <label for="Message">Message:</label>
+                                <textarea class="form-control" rows="5" id="Message" name="contact_message"></textarea>
+                            </div>
+
+                            <div class="mb-3 mt-3">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
