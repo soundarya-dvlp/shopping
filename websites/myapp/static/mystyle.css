@@ -5,7 +5,7 @@
     background-color: black;
 }
 .homesec{
-    background-image: url(../static/images/BACKGROUND.jpg );
+    background-image: url(../static/images/BACKGROUND.jpg )!important;
     background-size: cover;
 }
 
